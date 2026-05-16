@@ -1,0 +1,40 @@
+#main {
+    width: 100%;
+}
+footer {
+  background-color: gray;
+  padding: 50px; 
+  margin: 0;
+}
+#desk, #ice, #person {
+    border-radius: 50%;
+    height: 250px;
+    border: 10px solid rgb(41, 40, 40);  
+}
+body {
+    margin: 0;
+    max-height: fit-content;
+}
+#parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#desk {
+    margin: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+#ice {
+    margin: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+#person {
+    margin: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+* {
+    border: 2px solid blue;
+}
