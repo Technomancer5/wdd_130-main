@@ -3,15 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD130 Home Page</title>
+    <title>Home Page</title>
 </head>
+
+<!-- The Language Picker Container -->
+<div class="language-picker">
+    <button id="en-btn" class="lang-button">English</button>
+    <button id="el-btn" class="lang-button">Elvish</button>
+    <!-- Keep the Klingon button commented out for now to match your JS -->
+    <!-- <button id="kl-btn" class="lang-button">Klingon</button> -->
+</div>
+
 <body>
-    <h1>Welcome to my website!!</h1>
+    <!-- I am adding the data-i18n translation keys for my
+     my elvish translation button, which will use a Manual Translation
+     Dictionary combined with a specialized transcriber for Elvish
+     and will also translate back to english when you hover over a 
+     paragraph as well. -->
+
+    <!-- I believe I just need the tag below and can remove 'welcome
+     to my website!!' and will just change it in my javascript page -->
+    <h1 data-i18n="welcome">Welcome to my website!!</h1>
+
 <nav>
-  <a href="aboutme/index.html">About Me Page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-  <a href="my_portfolio/index.html">Portfolio&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-  <a href="my_portfolio/site-plan.html">Personal Siteplan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+  <a href="aboutme/index.html" data-i18n="navAbout">About Me Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="my_portfolio/index.html" data-i18n="navPortfolio">Portfolio</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="my_portfolio/site-plan.html" data-i18n="navPlan">Personal Siteplan</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </nav>
 <p>Jonathan Anderson</p>
+<script src="script.js"></script>
 </body>
 </html>
