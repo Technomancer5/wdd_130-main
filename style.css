@@ -9,11 +9,12 @@
     --fancy-font: Papyrus;
   }
 body {
-    background-color:#F1FF2E;
+    background-color: #F1FF2E;
     font-size: 22px;
-    width: 1400px;
-    margin: 0;
+    max-width: 1400px; /* Allows the site to shrink gracefully on smaller screens */
+    margin: 0 auto;    /* Centers your entire website layout on the screen */
     padding: 0;
+    overflow-x: hidden; /* Guards against anything throwing a horizontal scrollbar */
 }
 #title {
     display: flex;
@@ -100,23 +101,27 @@ footer {
 /* this is my child page 1 achievements css*/
 #home-grid1 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* This forces column 1 to fit the text, and lets columns 2 & 3 share the rest perfectly */
+    grid-template-columns: minmax(300px, 1fr) 1fr 1fr; 
     padding: 25px;
     margin: 30px;
+    box-sizing: border-box; /* Ensures padding doesn't add extra width to the grid */
 }
+
 #home-grid1 h5 {
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
     max-width: 500px;
     margin-left: 40px;
-}    
+}
+
 .employeeofquarter-img {
     grid-column: 2 / span 2;
     grid-row: 1 / span 2;
-    justify-self: start;
-    max-width: 850px;
-    margin-right: 200px;
-    margin-bottom: 20px;
+    justify-self: center; /* Centering it inside columns 2 & 3 prevents right-side spill */
+    width: 100%;          /* Allows the image to be fully responsive */
+    max-width: 650px;     /* Keeps it from blowing up past your preferred size */
+    margin-bottom: 20px;  /* Kept your bottom margin intact */
 }
 .cyberguy-img {
     grid-column: 1 / span 1;
@@ -208,3 +213,42 @@ footer {
     top: 200px;
     background-color:#1eabdb /* Light Black */
   }
+
+  /* Container positioning */
+.language-picker {
+    padding: 20px;
+    text-align: right; /* Places them in the top right corner */
+}
+
+/* Technomancer Button Style */
+.lang-button {
+    background-color: #222; /* Dark background */
+    color: #0f0;            /* Neon green text */
+    border: 2px solid #0f0; /* Neon green border */
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;        /* Changes mouse to a hand on hover */
+    font-family: 'Courier New', Courier, monospace; /* Terminal look */
+    transition: 0.3s;       /* Smooth color change */
+}
+
+/* Hover effect */
+.lang-button:hover {
+    background-color: #0f0;
+    color: #000;            /* Inverts colors on hover */
+}
+
+/* The box that follows your mouse */
+#translation-overlay {
+    position: absolute; /* Allows it to move freely on the page */
+    display: none;      /* Keeps it hidden until we need it */
+    background: rgba(0, 0, 0, 0.85); /* Semi-transparent dark background */
+    color: #0f0;        /* Neon green text */
+    border: 1px solid #0f0; /* Neon green border */
+    padding: 8px 12px;
+    border-radius: 4px;
+    pointer-events: none; /* Crucial: mouse 'ignores' the box so it doesn't flicker */
+    z-index: 9999;      /* Ensures it stays on top of everything else */
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+}

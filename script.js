@@ -5,10 +5,11 @@
 
    const translations = {
     english: {
-        welcome: "Welcome to my portfolio",
+        welcome: "Welcome to my Website!!",
         navAbout: "About Me Page",
         navPortfolio: "Portfolio",
-        navPlan: "Personal Siteplan"
+        navPlan: "Personal Siteplan",
+        navHome: "Home"
     },
     /*
     klingon: {

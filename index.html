@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- 2. The Elvish Font Stylesheet (Tengwar Annatar) -->
+    <link rel="stylesheet" href="https://unpkg.com/tengwar/tengwar-annatar.css">
+
+    <!-- 3. The Tengwar Transcriber Library -->
+    <script src="https://unpkg.com/tengwar/tengwar.min.js"></script>
 </head>
 
 <!-- The Language Picker Container -->
@@ -26,14 +32,15 @@
 
     <!-- I believe I just need the tag below and can remove 'welcome
      to my website!!' and will just change it in my javascript page -->
-    <h1 data-i18n="welcome">Welcome to my website!!</h1>
+    <h1 data-i18n="welcome" data-english="Welcome to my Website!!">Welcome</h1>
 
         <nav>
             <div id="mySidenav" class="sidenav">    
-                <a href="index.html" id="index" data-i18n="navHome">Home</a>
+                <a href="index.html" id="index" data-i18n="navHome" data-english="Home">Home</a>
                 <a href="my_portfolio/achievements.html" id="achievements" data-i18n="navAchievements">Achievements Page</a>
                 <a href="my_portfolio/about_me.html" id="about" data-i18n="navAbout">About Me</a>
                 <a href="my_portfolio/site-plan.html" id="site-plan" data-i18n="navSitePlan">Site Plan</a>
+                <a href="Elvish_Translator.html" id="Elvish-Translator" data-i18n="navElvishTranslator">Elvish Translator</a>
             </div>    
         </nav>
     </header>

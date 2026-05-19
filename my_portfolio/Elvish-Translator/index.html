@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tengwar — The Elvish Translator</title>
+
+  <!--
+    ROOT STYLESHEET
+    Adjust the path below to match wherever your root CSS file lives.
+    Common examples:
+      /styles.css          (at the very root of your site)
+      /css/styles.css      (inside a css folder)
+      /assets/main.css     (inside assets)
+    This path works if your site root is one level above this folder.
+  -->
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!--
+    ELVISH PAGE STYLESHEET
+    This file lives right next to this HTML file inside the elvish-translator folder.
+    It only contains styles specific to this page, so it won't affect the rest of your site.
+  -->
+  <link rel="stylesheet" href="Elvish.css" />
+
+  <!-- Google Fonts — Cinzel and EB Garamond for the Elvish aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+</head>
+<body class="elvish-page">
+
+  <!-- ── STARFIELD BACKGROUND ─────────────────────────────────────── -->
+  <div class="ev-stars" aria-hidden="true"></div>
+
+  <!-- ── PAGE WRAPPER ─────────────────────────────────────────────── -->
+  <div class="ev-wrapper">
+
+    <!-- HEADER -->
+    <header class="ev-header">
+      <nav>
+            <div id="mySidenav" class="sidenav">    
+                <a href="index.html" id="index" data-i18n="navHome" data-english="Home">Home</a>
+                <a href="my_portfolio/Elvish-Translator/achievements.html" id="achievements" data-i18n="navAchievements">Achievements Page</a>
+                <a href="my_portfolio/Elvish-Translator/about_me.html" id="about" data-i18n="navAbout">About Me</a>
+                <a href="my_portfolio/Elvish-Translator/site-plan.html" id="site-plan" data-i18n="navSitePlan">Site Plan</a>
+                <a href="Elvish_Translator.html" id="Elvish-Translator" data-i18n="navElvishTranslator">Elvish Translator</a>
+            </div>
+      </nav>
+      <div class="ev-rune-bar" aria-hidden="true">✦ · ✦ · ✦</div>
+      <h1 class="ev-title">Tengwar</h1>
+      <p class="ev-subtitle">The Elvish Script Translator</p>
+      <div class="ev-ornament" aria-hidden="true">
+        <div class="ev-ornament-line"></div>
+        <div class="ev-ornament-diamond"></div>
+        <div class="ev-ornament-line"></div>
+      </div>
+      <p class="ev-lore-intro">
+        Inscribe your words in the ancient script of the Elves,<br />
+        as devised by Fëanor in the Elder Days of Arda.
+      </p>
+    </header>
+
+    <hr class="ev-divider" />
+
+    <!-- TRANSLATOR CARD -->
+    <main class="ev-card" role="main">
+      <div class="ev-card-corner ev-card-corner--tr" aria-hidden="true"></div>
+      <div class="ev-card-corner ev-card-corner--bl" aria-hidden="true"></div>
+
+      <!-- Mode selector -->
+      <div class="ev-mode-row" role="group" aria-label="Translation mode">
+        <button class="ev-mode-btn ev-mode-btn--active" data-mode="english">English in Tengwar</button>
+        <button class="ev-mode-btn" data-mode="sindarin">Sindarin Words</button>
+        <button class="ev-mode-btn" data-mode="quenya">Quenya Words</button>
+      </div>
+
+      <!-- Input -->
+      <label class="ev-field-label" for="ev-input">Your text</label>
+      <textarea
+        id="ev-input"
+        class="ev-textarea"
+        rows="3"
+        placeholder="Type your words here…"
+        aria-label="English text to translate"
+      ></textarea>
+
+      <!-- Font warning (shown by JS if Tengwar font not found) -->
+      <div class="ev-font-notice" id="ev-font-notice" role="alert" aria-live="polite">
+        <strong>Tengwar font not detected.</strong>
+        The script below is in ASCII Tengwar mode — it only looks like Elvish when the
+        <a href="https://www.fontspace.com/tengwar-annatar-font-f2244" target="_blank" rel="noopener">Tengwar Annatar font</a>
+        is installed. See the setup guide below to add it as a web font.
+      </div>
+
+      <!-- Translate button -->
+      <div class="ev-translate-row">
+        <span class="ev-arrow" aria-hidden="true">↓</span>
+        <button class="ev-translate-btn" id="ev-translate-btn" aria-label="Translate to Tengwar">
+          Inscribe in Tengwar
+        </button>
+        <span class="ev-arrow" aria-hidden="true">↓</span>
+      </div>
+
+      <!-- Output -->
+      <section class="ev-output ev-output--hidden" id="ev-output" aria-label="Translation output">
+        <div class="ev-field-label" id="ev-output-label">Tengwar script</div>
+        <div class="ev-tengwar-output" role="region" aria-live="polite">
+          <div class="ev-tengwar-text" id="ev-tengwar-out"></div>
+          <div class="ev-fallback-note" id="ev-fallback-note"></div>
+        </div>
+
+        <div class="ev-phonetic-row">
+          <span class="ev-phonetic-label">Phonetic guide:</span>
+          <span class="ev-phonetic-text" id="ev-phonetic-out"></span>
+        </div>
+
+        <div class="ev-action-row">
+          <button class="ev-action-btn" id="ev-copy-btn">Copy script</button>
+          <button class="ev-action-btn" id="ev-clear-btn">Clear</button>
+        </div>
+      </section>
+
+      <!-- Sample phrases -->
+      <div class="ev-samples">
+        <div class="ev-field-label">Try these phrases</div>
+        <div class="ev-samples-grid" id="ev-samples-grid"></div>
+      </div>
+    </main>
+
+    <!-- LORE CARDS -->
+    <div class="ev-lore-grid">
+      <div class="ev-lore-card">
+        <h3>About Tengwar</h3>
+        <p>Tengwar is an alphabet created by J.R.R. Tolkien, devised in his mythology by the Elf Fëanor. It is used to write several of Tolkien's invented languages, most notably Quenya and Sindarin, as well as English and other real languages.</p>
+      </div>
+      <div class="ev-lore-card">
+        <h3>How this works</h3>
+        <p>This translator phonetically maps English sounds to Tengwar characters using the "English mode." Digraphs like <em>th</em>, <em>sh</em>, and <em>ng</em> are mapped to single glyphs. For your visitors to see Elvish glyphs, install the Tengwar Annatar font.</p>
+      </div>
+      <div class="ev-lore-card">
+        <h3>Sindarin &amp; Quenya</h3>
+        <p>Use the mode tabs above to look up known Elvish words in Sindarin and Quenya — the two main Elvish languages Tolkien developed. Full grammar translation is beyond any automated tool as the languages were never completed.</p>
+      </div>
+      <div class="ev-lore-card">
+        <h3>Adding the font</h3>
+        <p>Download <em>Tengwar Annatar</em> free, convert to <code>.woff2</code>, place it in your <code>/fonts/</code> folder, and add a <code>@font-face</code> rule in your root CSS. The <code>.ev-tengwar-text</code> class will pick it up automatically.</p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="ev-footer">
+      <div class="ev-rune-bar" aria-hidden="true">✦ · ✦ · ✦</div>
+      <p>Auta miquilis Orco &nbsp;·&nbsp; May the fleas of a thousand Orcs afflict your enemies</p>
+    </footer>
+
+  </div><!-- /.ev-wrapper -->
+
+  <!--
+    ROOT JAVASCRIPT
+    Adjust the path to match your root JS file.
+    If your root JS already uses a <script> tag at the bottom of a layout/template,
+    you may not need this line — just make sure elvish.js loads AFTER your root JS.
+  -->
+  <script src="/script.js"></script>
+
+  <!--
+    ELVISH PAGE SCRIPT
+    Lives next to this HTML file. Loaded after the root JS so both are available.
+  -->
+  <script src="Elvish.js"></script>
+</body>
+</html>
