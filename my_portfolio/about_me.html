@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Main</title>
+    
     <link rel="stylesheet" href="../style.css">
+
+        <!-- 2. The Elvish Font Stylesheet (Tengwar Annatar) -->
+    <link rel="stylesheet" href="https://unpkg.com/tengwar/tengwar-annatar.css">
+
+        <!-- 3. The Tengwar Transcriber Library -->
+    <script src="https://unpkg.com/tengwar/tengwar.min.js"></script>
 </head>
-<body>
+
+<body id="about-me">
+
     <header>
-        <a id="logo_link" href="index.html">     
-        </a>
+            <!-- The Language Picker Container -->
+        <div class="language-picker">
+            <button id="en-btn" class="lang-button">English</button>
+            <button id="el-btn" class="lang-button">Elvish</button>
+        </div>    
+            <!-- Keeping the Klingon button vv below vv commented out for now to match my JS -->
+            <!-- <button id="kl-btn" class="lang-button">Klingon</button> -->
+
         <nav>
             <div id="mySidenav" class="sidenav">    
-                <a href="index.html" id="index" data-i18n="navHome" data-english="Home">Home</a>
-                <a href="my_portfolio/achievements.html" id="achievements" data-i18n="navAchievements">Achievements Page</a>
-                <a href="my_portfolio/about_me.html" id="about" data-i18n="navAbout">About Me</a>
-                <a href="my_portfolio/site-plan.html" id="site-plan" data-i18n="navSitePlan">Site Plan</a>
-                <a href="Elvish_Translator.html" id="Elvish-Translator" data-i18n="navElvishTranslator">Elvish Translator</a>
+                <a href="../index.html" id="index" data-i18n="navHome" data-english="Home">Home</a>
+    
+                <a href="achievements.html" id="achievements" data-i18n="navAchievements" data-english="Achievements Page">Achievements Page</a>
+    
+                <a href="about_me.html" id="about" data-i18n="navAbout" data-english="About Me">About Me</a>
+    
+                <a href="site-plan.html" id="site-plan" data-i18n="navSitePlan" data-english="Site Plan">Site Plan</a>
+    
+                <a href="Elvish_Translator.html" id="Elvish-Translator" data-i18n="navElvishTranslator" data-english="Elvish Translator">Elvish Translator</a>
             </div>
         </nav>
     </header>
@@ -27,7 +48,7 @@
         </div>   
     <main>
         <div id="home-grid2">
-            <h3 class="h3">
+            <h3 class="h3" data-i18n="about-me">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to my chronicling of my Cybersecurity journey, I hope 
                 you can see both the path I have taken to get where I am, as 
                 well as my future aspirations.&nbsp;&nbsp; From a young age I have been 
@@ -91,7 +112,8 @@
     </main>
     <footer>
         <p>Educational Savant &copy; 2023 - Jonathan Anderson</p>
-        <p><a href="site-plan.html">Site Plan</a></p>
+        <p><a href="../index.html">Home</a></p>
+        <script src="../script.js"></script>
     </footer>
 </body>
     

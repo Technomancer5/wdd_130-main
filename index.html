@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Home Page</title>
+    
     <link rel="stylesheet" href="style.css">
 
-    <!-- 2. The Elvish Font Stylesheet (Tengwar Annatar) -->
+        <!-- 2. The Elvish Font Stylesheet (Tengwar Annatar) -->
     <link rel="stylesheet" href="https://unpkg.com/tengwar/tengwar-annatar.css">
 
-    <!-- 3. The Tengwar Transcriber Library -->
+        <!-- 3. The Tengwar Transcriber Library -->
     <script src="https://unpkg.com/tengwar/tengwar.min.js"></script>
 </head>
 
-<!-- The Language Picker Container -->
-<div class="language-picker">
-    <button id="en-btn" class="lang-button">English</button>
-    <button id="el-btn" class="lang-button">Elvish</button>
-    <!-- Keep the Klingon button commented out for now to match your JS -->
-    <!-- <button id="kl-btn" class="lang-button">Klingon</button> -->
-</div>
+<body id="home-page">
 
-<body>
     <header>
-            <!-- I am adding the data-i18n translation keys for my
-     my elvish translation button, which will use a Manual Translation
-     Dictionary combined with a specialized transcriber for Elvish
-     and will also translate back to english when you hover over a 
-     paragraph as well. -->
+            <!-- The Language Picker Container -->
+        <div class="language-picker">
+            <button id="en-btn" class="lang-button">English</button>
+            <button id="el-btn" class="lang-button">Elvish</button>
+        </div>
 
-    <!-- I believe I just need the tag below and can remove 'welcome
-     to my website!!' and will just change it in my javascript page -->
-    <h1 data-i18n="welcome" data-english="Welcome to my Website!!">Welcome</h1>
+        <div id="brand">
+            <img class="logo" src="images/cyber_Goku.jpg" alt="Cyber Goku">
+            <h1 data-i18n="welcome" data-english="Welcome to my Website!!">Welcome</h1>
+        </div>
 
         <nav>
             <div id="mySidenav" class="sidenav">    
                 <a href="index.html" id="index" data-i18n="navHome" data-english="Home">Home</a>
-                <a href="my_portfolio/achievements.html" id="achievements" data-i18n="navAchievements">Achievements Page</a>
-                <a href="my_portfolio/about_me.html" id="about" data-i18n="navAbout">About Me</a>
-                <a href="my_portfolio/site-plan.html" id="site-plan" data-i18n="navSitePlan">Site Plan</a>
-                <a href="Elvish_Translator.html" id="Elvish-Translator" data-i18n="navElvishTranslator">Elvish Translator</a>
+    
+                <a href="my_portfolio/achievements.html" id="achievements" data-i18n="navAchievements" data-english="Achievements Page">Achievements Page</a>
+    
+                <a href="my_portfolio/about_me.html" id="about" data-i18n="navAbout" data-english="About Me">About Me</a>
+    
+                <a href="my_portfolio/site-plan.html" id="site-plan" data-i18n="navSitePlan" data-english="Site Plan">Site Plan</a>
+    
+                <a href="my_portfolio/Elvish_Translator.html" id="Elvish-Translator" data-i18n="navElvishTranslator" data-english="Elvish Translator">Elvish Translator</a>
             </div>    
         </nav>
     </header>
+
     <main>
     <div id="title">  
-        <img class="logo" src="images/cyber_Goku.jpg" alt="Cyber Goku">
-        <h1 class="home-title">Educational Savant</h1>
+        <h1 class="home-title" data-i18n="homeTitle" data-english="Educational Savant">Educational Savant</h1>
     </div>         
     <div id="home-grid">
         <section id="hero-msg">  
-        <h4 id="mytext">
+        <h4 id="mytext" data-i18n="greeting">
             If you are seeking a dedicated cybersecurity individual who loves to learn, look 
             no farther.&nbsp;&nbsp;  I am addicted to learning and enjoy solving complicated problems.
         </h4>
@@ -63,18 +64,7 @@
     </main>
     <footer>
         <p>Educational Savant &copy; 2023 - Jonathan Anderson</p>
-        <p><a href="my_portfolio/site-plan.html">Site Plan</a></p>
-        <div class="social">
-            <a href="https://facebook.com" target="_blank">
-                <img src="images/facebook.png" alt="fb icon">
-            </a>
-            <a href="https://twitter.com" target="_blank">
-                <img src="images/twitter.png" alt="twitter icon">
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <img src="images/instagram.png" alt="instagram icon">
-            </a>
-        </div>
+       
     </footer>
     <script src="script.js"></script>
 </body>

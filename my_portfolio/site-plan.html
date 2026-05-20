@@ -4,22 +4,47 @@
     
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site Plan</title>
-    <link type="text/css" rel="stylesheet" href="styles/site-plan.css">
+    
+    <link type="text/css" rel="stylesheet" href="../style.css">
+    
+     <!-- 2. The Elvish Font Stylesheet (Tengwar Annatar) -->
+    <link rel="stylesheet" href="https://unpkg.com/tengwar/tengwar-annatar.css">
+
+    <!-- 3. The Tengwar Transcriber Library -->
+    <script src="https://unpkg.com/tengwar/tengwar.min.js"></script>
+
   </head>
 
-  <body>
+  <body id="site-plan-page">
+
+    <!-- The Language Picker Container -->
+  <div class="language-picker">
+   <button id="en-btn" class="lang-button">English</button>
+   <button id="el-btn" class="lang-button">Elvish</button>
+  </div>    
+
+    <!-- Keep the Klingon button commented out for now to match your JS -->
+    <!-- <button id="kl-btn" class="lang-button">Klingon</button> -->
+
+
     <header>
       <nav>
             <div id="mySidenav" class="sidenav">    
-                <a href="index.html" id="index" data-i18n="navHome" data-english="Home">Home</a>
-                <a href="my_portfolio/achievements.html" id="achievements" data-i18n="navAchievements">Achievements Page</a>
-                <a href="my_portfolio/about_me.html" id="about" data-i18n="navAbout">About Me</a>
-                <a href="my_portfolio/site-plan.html" id="site-plan" data-i18n="navSitePlan">Site Plan</a>
-                <a href="Elvish_Translator.html" id="Elvish-Translator" data-i18n="navElvishTranslator">Elvish Translator</a>
-            </div>
+                <a href="../index.html" id="index" data-i18n="navHome" data-english="Home">Home</a>
+    
+                <a href="achievements.html" id="achievements" data-i18n="navAchievements" data-english="Achievements Page">Achievements Page</a>
+    
+                <a href="about_me.html" id="about" data-i18n="navAbout" data-english="About Me">About Me</a>
+    
+                <a href="site-plan.html" id="site-plan" data-i18n="navSitePlan" data-english="Site Plan">Site Plan</a>
+    
+                <a href="Elvish_Translator.html" id="Elvish-Translator" data-i18n="navElvishTranslator" data-english="Elvish Translator">Elvish Translator</a>
+            </div> 
       </nav>
-      <h1>My Cybersecurity Journey Site Plan</h1>
+      <h1 data-i18n="site-title">My Cybersecurity Journey Site Plan</h1>
       <h2>Jonathan Anderson</h2>
       <h2>WDD 130-[section]</h2>
     </header>
@@ -27,32 +52,29 @@
 
       <!-- ------------------------Steps 2-3------------------------------ -->
       <hr>
-      <h2>Overview</h2>
-      <h3>Purpose</h3>
-      <p>   I have always been captivated by technology from a very young age and have made
+      <h2 data-i18n="site-h2">Overview</h2>
+      <h3 data-i18n="site-h3">Purpose</h3>
+      <p data-i18n="site-p">   I have always been captivated by technology from a very young age and have made
         it my goal to comprehend its most elusive secrets.  This has led me to perhaps the
         most complicated fields of the tech industry, cybersecurity.  This is a showcase 
         for all the knowledge and skills I have developed for both myself and my career 
         in cybersecurity. </p>
 
 
-      <h3>Audience</h3>
-      <p>If you are seeking a dedicated cybersecurity individual who loves to learn, look 
+      <h3 data-i18n="site-h3-second-one">Audience</h3>
+      <p data-i18n="site-p-second-one">If you are seeking a dedicated cybersecurity individual who loves to learn, look 
         no farther.  I am addicted to learning and enjoy solving complicated problems.
       </p> 
 
-      <hr>
-      <h2>Branding</h2>
-      <h3>Website Logo</h3>
+      <h2 data-i18n="site-h2-second-one">Branding</h2>
+      <h3 data-i18n="site-h3-second-one">Website Logo</h3>
       <img src="images/cyber_Goku.jpg" alt="Logo image">
       <hr>
-      <h2>
-        Style Guide
-      </h2>
+      <h2 data-i18n="site-h2-third-one">Style Guide</h2>
 
       <!-- ------------------------Steps 4-8------------------------------ -->
 
-      <h3>
+      <h3 data-i18n="site-h3-third-one"">
         Color Palette
       </h3>
       Palette URL: <a href="https://coolors.co/9affe1-1eabdb-92fd72-f1ff2e-ff0000-0008f1" target="_blank">https://coolors.co/9affe1-1eabdb-92fd72-f1ff2e-ff0000-0008f1</a>
@@ -244,6 +266,9 @@
       </p>
       <img src="images/sub_page_2.png" alt="page 3 wireframe">
     </main>
+    <footer>
+        <p>Educational Savant &copy; 2023 - Jonathan Anderson</p>
+        <p><a href="site-plan.html">Site Plan</a></p>
+        <script src="../script.js"></script>
+    </footer>
   </body>
-
-</html>

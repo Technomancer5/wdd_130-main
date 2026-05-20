@@ -1,13 +1,23 @@
+@import url('https://fonts.cdnfonts.com/css/tengwar-annatar');
+
 :root {
     --primary-color: #0008F1;
     --secondary-color: #1eabdb;
-    --accent1-color: #F1FF2E;
+    --accent1-color: #622eff;
     --accent2-color: #ff0000; 
     --extra-font: "Shadows Into Light";
     --paragraph-font: Play, Helvetica, sans-serif;
     --heading-font: Copperplate;
     --fancy-font: Papyrus;
   }
+
+header, main {
+    /* Since the nav bar buttons are 250px wide, I gave the content 
+       an extra cushion so it sits perfectly clear of the buttons */
+    margin-left: 100px; !important;
+    padding-right: 15px; /* Keeps the right side balanced */
+}
+
 body {
     background-color: #F1FF2E;
     font-size: 22px;
@@ -16,6 +26,28 @@ body {
     padding: 0;
     overflow-x: hidden; /* Guards against anything throwing a horizontal scrollbar */
 }
+/* Global styles for all bodies (fonts, margins, etc.) */
+body {
+    margin: 0;
+    font-family: Play, sans-serif;
+}
+
+/* Unique backgrounds per page ID */
+#home-page {
+    background-color: #000588; /* Dark Blue */
+}
+
+#achievements-page {
+    background-color: #1a1a1a; /* Dark Grey/Black for a sleek portfolio look */
+}
+
+#site-plan-page {
+    background-color: #1eabdb; /* Light Blue to match your site-plan scheme */
+}
+#about-me {
+    background-color: #210074; /* Light Blue to match your site-plan scheme */
+}
+
 #title {
     display: flex;
     justify-content: center;
@@ -184,35 +216,47 @@ footer {
 /* Style the links inside the sidenav */
 #mySidenav a {
     position: fixed; /* Position them relative to the browser window */
-    left: -150px; /* Position them outside of the screen */
+    left: -190px; /* Position them outside of the screen */
     transition: 0.3s; /* Add transition on hover */
-    padding: 20px; /* 15px padding */
-    width: 175px; /* Set a specific width */
+    padding: 20px 25px;
+    width: 250px; /* Set a specific width */
     text-decoration: none; /* Remove underline */
     font-size: 25px; /* Increase font size */
     color: #F1FF2E; /* White text color */
-    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+    border-radius: 0 8px 8px 0; /* Rounded corners on the top right and bottom right side */
+    box-sizing: border-box;   /* Ensures the padding doesn't break the layout width math */
+    display: flex;
+    align-items: center;      /* Vertically centers the text inside the button */
+    justify-content: flex-end; /* Keeps text aligned toward the edge you hover over */
+    
+    /* white-space: nowrap; *//* <<< Prevents text from ever breaking into a second row */
   }
+
   #mySidenav a:hover {
     left: 0; /* On mouse-over, make the elements appear as they should */
-  } 
-  /* The about link: 20px from the top with a green background */
+  }
+
   #index {
     top: 20px;
     background-color: #ff0000;
   }
   #achievements {
-    top: 80px;
-    background-color: #0008F1; /* Blue */
+    top: 100px;
+    background-color: #0008F1;
   } 
   #about {
-    top: 140px;
-    background-color: #ff0000; /* Red */
+    top: 215px;
+    background-color: #1eabdb;
   }
   #site-plan {
-    top: 200px;
-    background-color:#1eabdb /* Light Black */
+    top: 295px;
+    background-color:#1eabdb
   }
+
+#Elvish-Translator {
+  top: 375px;
+  background-color: #0008F1;
+}
 
   /* Container positioning */
 .language-picker {
@@ -251,4 +295,10 @@ footer {
     z-index: 9999;      /* Ensures it stays on top of everything else */
     font-size: 14px;
     font-family: 'Courier New', monospace;
+}
+
+.elvish-text {
+    font-family: 'Tengwar Annatar', sans-serif;
+    font-size: 2.2em; /* Script fonts tend to look small; boosting the size helps clarity */
+    line-height: 1.6;
 }

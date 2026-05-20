@@ -20,7 +20,7 @@
     },
     */
     elvish: {
-        welcome: "Mára rë",
+        welcome: "Welcome to my website!!",
         navAbout: "Nanyë (About Me)",
         navPortfolio: "Mentur (Project Works)",
         navPlan: "Sardë (The Blueprint/Plan)"
@@ -42,6 +42,11 @@ function changeLanguage(lang) {
         // This ensures the site doesn't break if a translation is missing [2].
         if (translations[lang] && translations[lang][key]) {
             element.textContent = translations[lang][key];
+        }
+        if (lang === 'elvish') {
+            element.classList.add('elvish-text');
+        } else {
+            element.classList.remove('elvish-text');
         }
     });
 
