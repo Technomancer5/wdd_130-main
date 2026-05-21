@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Main</title>
     
     <link rel="stylesheet" href="../style.css">
 
-     <!-- 2. The Elvish Font Stylesheet (Tengwar Annatar) -->
+        <!-- 2. The Elvish Font Stylesheet (Tengwar Annatar) -->
     <link rel="stylesheet" href="https://unpkg.com/tengwar/tengwar-annatar.css">
 
-    <!-- 3. The Tengwar Transcriber Library -->
+        <!-- 3. The Tengwar Transcriber Library -->
     <script src="https://unpkg.com/tengwar/tengwar.min.js"></script>
 </head>
 
-<body id="achievements-page">  
+<body id="achievements-page">
 
-    <!-- The Language Picker Container -->
-<div class="language-picker">
-    <button id="en-btn" class="lang-button">English</button>
-    <button id="el-btn" class="lang-button">Elvish</button>
-</div>    
+    <header id="brand">
+            <!-- The Language Picker Container -->
+        <div class="language-picker">
+            <button id="en-btn" class="lang-button">English</button>
+            <button id="el-btn" class="lang-button">Elvish</button>
+        </div>
 
-    <!-- Keep the Klingon button commented out for now to match your JS -->
-    <!-- <button id="kl-btn" class="lang-button">Klingon</button> -->
+        <a id="logo_link" href="index.html">     
+            <img class="logo" src="images/cyber_Goku.jpg" alt="Cyber Goku">
+        </a>
 
-    <header>          
+        <div id="title-group">
+            <h1 class="home-title" data-i18n="acheivments-intro" data-english="My Achievments">My Achievements</h1>   
+        </div>
+
         <nav>
             <div id="mySidenav" class="sidenav">    
                 <a href="../index.html" id="index" data-i18n="navHome" data-english="Home">Home</a>
     
-                <a href="achievements.html" id="achievements" data-i18n="navAchievements" data-english="Achievements Page">Achievements Page</a>
-    
                 <a href="about_me.html" id="about" data-i18n="navAbout" data-english="About Me">About Me</a>
+
+                <a href="achievements.html" id="achievements" data-i18n="navAchievements" data-english="Achievements">Achievements</a>
     
                 <a href="site-plan.html" id="site-plan" data-i18n="navSitePlan" data-english="Site Plan">Site Plan</a>
     
@@ -41,13 +48,10 @@
             </div> 
         </nav>
     </header>
-        <div id="title">
-            <img class="logo" src="images/cyber_Goku.jpg" alt="Cyber Goku">
-            <h1 class="home-title" data-i18n="anyUniqueName">My Achievements</h1>   
-        </div>
+        
     <main>
         <div id="home-grid1">
-            <h5 data-i18n="achievements-intro">
+            <h5 data-i18n="achievements-intro" data-english="acheivments-intro">
                 I have always been captivated by technology from a very young age 
                 and have made it my goal to comprehend its most elusive secrets.&nbsp;&nbsp; 
                 This has led me to perhaps the most complicated fields of the tech 
@@ -62,10 +66,12 @@
             <img class="introphp-img" src="images/Jonathan_Anderson_PHP.png" alt="Intro PHP">
         </div>
     </main>
+
     <footer>    
         <p>Educational Savant &copy; 2023 - Jonathan Anderson</p>
         <p><a href="../index.html">Home</a></p>
-        <script src="../script.js"></script>
     </footer>
+
+    <script src="../script.js"></script>
 </body>
     

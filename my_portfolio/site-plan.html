@@ -1,41 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="en-us">
-    
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Site Plan</title>
     
-    <link type="text/css" rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css">
     
-     <!-- 2. The Elvish Font Stylesheet (Tengwar Annatar) -->
+        <!-- 2. The Elvish Font Stylesheet (Tengwar Annatar) -->
     <link rel="stylesheet" href="https://unpkg.com/tengwar/tengwar-annatar.css">
 
-    <!-- 3. The Tengwar Transcriber Library -->
+        <!-- 3. The Tengwar Transcriber Library -->
     <script src="https://unpkg.com/tengwar/tengwar.min.js"></script>
+</head>
 
-  </head>
+<body id="site-plan-page">
 
-  <body id="site-plan-page">
+    <header id="brand">
+            <!-- The Language Picker Container -->
+        <div class="language-picker">
+            <button id="en-btn" class="lang-button">English</button>
+            <button id="el-btn" class="lang-button">Elvish</button>
+        </div>
 
-    <!-- The Language Picker Container -->
-  <div class="language-picker">
-   <button id="en-btn" class="lang-button">English</button>
-   <button id="el-btn" class="lang-button">Elvish</button>
-  </div>    
+        <a id="logo_link" href="index.html">     
+            <img class="logo" src="images/cyber_Goku.jpg" alt="Cyber Goku">
+        </a>
 
-    <!-- Keep the Klingon button commented out for now to match your JS -->
-    <!-- <button id="kl-btn" class="lang-button">Klingon</button> -->
+        <div class="title-group">
+            <h1 data-i18n="site-title" data-english="My Cybersecurity Journey">My Cybersecurity Journey</h1>
+        </div>
 
-
-    <header>
-      <nav>
+        <nav>
             <div id="mySidenav" class="sidenav">    
                 <a href="../index.html" id="index" data-i18n="navHome" data-english="Home">Home</a>
     
-                <a href="achievements.html" id="achievements" data-i18n="navAchievements" data-english="Achievements Page">Achievements Page</a>
+                <a href="achievements.html" id="achievements" data-i18n="navAchievements" data-english="Achievements">Achievements</a>
     
                 <a href="about_me.html" id="about" data-i18n="navAbout" data-english="About Me">About Me</a>
     
@@ -43,232 +46,186 @@
     
                 <a href="Elvish_Translator.html" id="Elvish-Translator" data-i18n="navElvishTranslator" data-english="Elvish Translator">Elvish Translator</a>
             </div> 
-      </nav>
-      <h1 data-i18n="site-title">My Cybersecurity Journey Site Plan</h1>
-      <h2>Jonathan Anderson</h2>
-      <h2>WDD 130-[section]</h2>
+        </nav>
     </header>
+
     <main>
 
-      <!-- ------------------------Steps 2-3------------------------------ -->
-      <hr>
-      <h2 data-i18n="site-h2">Overview</h2>
-      <h3 data-i18n="site-h3">Purpose</h3>
-      <p data-i18n="site-p">   I have always been captivated by technology from a very young age and have made
-        it my goal to comprehend its most elusive secrets.  This has led me to perhaps the
-        most complicated fields of the tech industry, cybersecurity.  This is a showcase 
-        for all the knowledge and skills I have developed for both myself and my career 
-        in cybersecurity. </p>
+        <h2 data-i18n="site-h2">Overview</h2>
+        <h3 data-i18n="site-h3">Purpose</h3>
+
+        <p data-i18n="site-p">   I have always been captivated by technology from a very young age and have made
+            it my goal to comprehend its most elusive secrets.  This has led me to perhaps the
+            most complicated fields of the tech industry, cybersecurity.  This is a showcase 
+            for all the knowledge and skills I have developed for both myself and my career 
+            in cybersecurity. </p>
+
+        <h3 data-i18n="site-h3-second-one">Audience</h3>
+        <p data-i18n="site-p-second-one">If you are seeking a dedicated cybersecurity individual who loves to learn, look 
+            no farther.  I am addicted to learning and enjoy solving complicated problems.
+        </p> 
+
+        <h2 data-i18n="site-h2-second-one">Branding</h2>
+        <h3 data-i18n="site-h3-second-one">Website Logo</h3>
+        <img src="images/cyber_Goku.jpg" alt="Logo image">
+        <h2 data-i18n="site-h2-third-one">Style Guide</h2>
 
 
-      <h3 data-i18n="site-h3-second-one">Audience</h3>
-      <p data-i18n="site-p-second-one">If you are seeking a dedicated cybersecurity individual who loves to learn, look 
-        no farther.  I am addicted to learning and enjoy solving complicated problems.
-      </p> 
-
-      <h2 data-i18n="site-h2-second-one">Branding</h2>
-      <h3 data-i18n="site-h3-second-one">Website Logo</h3>
-      <img src="images/cyber_Goku.jpg" alt="Logo image">
-      <hr>
-      <h2 data-i18n="site-h2-third-one">Style Guide</h2>
-
-      <!-- ------------------------Steps 4-8------------------------------ -->
-
-      <h3 data-i18n="site-h3-third-one"">
+        <h3 data-i18n="site-h3-third-one"">
         Color Palette
-      </h3>
-      Palette URL: <a href="https://coolors.co/9affe1-1eabdb-92fd72-f1ff2e-ff0000-0008f1" target="_blank">https://coolors.co/9affe1-1eabdb-92fd72-f1ff2e-ff0000-0008f1</a>
+        </h3>
+        Palette URL: <a href="https://coolors.co/9affe1-1eabdb-92fd72-f1ff2e-ff0000-0008f1" target="_blank">https://coolors.co/9affe1-1eabdb-92fd72-f1ff2e-ff0000-0008f1</a>
 
 
-      <table class="colors">
-        <tr><th>Primary</th><th>Secondary</th><th>Accent 1</th><th>Accent 2</th></tr>
-        <tr><td class="primary">#0008F1</td><td class="secondary">#1eabdb</td><td class="accent1">#F1FF2E</td><td class="accent2"></td>#ff0000</tr>
-      </table>
+        <table class="colors">
+            <tr><th>Primary</th><th>Secondary</th><th>Accent 1</th><th>Accent 2</th></tr>
+            <tr><td class="primary">#0008F1</td><td class="secondary">#1eabdb</td><td class="accent1">#F1FF2E</td><td class="accent2"></td>#ff0000</tr>
+        </table>
 
-      <!-- ------------------------Step 9------------------------------ -->
 
-      <h3>
-        Typography
-      </h3>
-      <h4>
-        Heading Font: "Shadows Into Light"
-      </h4>
-      <h4>
-        Paragraph Font: Play, Helvetica, sans-serif
-      </h4>
-      <h3>
-        Normal paragraph example
-      </h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <h3>
-        Colored paragraph example
-      </h3>
-      <p class="colored">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-      </p>
+        <h3>
+            Typography
+        </h3>
+        <h4>
+            Heading Font: "Shadows Into Light"
+        </h4>
+        <h4>
+            Paragraph Font: Play, Helvetica, sans-serif
+        </h4>
+        <h3>
+            Normal paragraph example
+        </h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <h3>
+            Colored paragraph example
+        </h3>
+        <p class="colored">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        </p>
 
-      <!-- ------------------------Step 10------------------------------ -->
 
-      <h3>
-        Navigation
-      </h3>
-      <!-- Think about how you want your navigation bar to look. In the site-plan.css file change the colors to your colors to get the look you desire. --> 
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">Page2</a>
-        <a href="#">Page3</a>
-      </nav>
-      <hr>
-      <h2>
-        Site Map
-      </h2>
-      <div class="sitemap">
+        <h3>
+            Navigation
+        </h3> 
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Page2</a>
+            <a href="#">Page3</a>
+        </nav>
+      
+        <h2>
+            Site Map
+        </h2>
+        <div class="sitemap">
         <div class="sm-home">
-          Home
+            Home
         </div>
         <div class="sm-page2">
-          [Page2] <!-- change this -->
+            [Page2] <!-- change this -->
         </div>
         <div class="sm-page3">
-          [Page3]  <!-- change this -->
+            [Page3]  <!-- change this -->
         </div>
 
         <div class="top">
-          &nbsp;
+            &nbsp;
         </div>
         <div class="left">
-          &nbsp;
+            &nbsp;
         </div>
         <div class="right">
-          &nbsp;
+            &nbsp;
         </div>
 
-      </div>
 
-      <!-- --------Content Section -------------- -->
-      <hr>
-      <h2>
+        <h2>
         Content
-      </h2>
-      <h3>Home page</h3>
-      <p>
-        If you are seeking a dedicated cybersecurity individual who loves to learn, look 
-        no farther.  I am addicted to learning and enjoy solving complicated problems.
-        <!--My homepage with contain my resume and introduction and the most important parts of my portfolio-->
-
-      </p>
-      <p>Images for the Home page</p>
+        </h2>
+        <h3>Home page</h3>
+        <p>
+            If you are seeking a dedicated cybersecurity individual who loves to learn, look 
+            no farther.  I am addicted to learning and enjoy solving complicated problems.
+            <!--My homepage with contain my resume and introduction and the most important parts of my portfolio-->
+        </p>
+        <p>Images for the Home page</p>
         <img src="#" alt="image for homepage">
         <img src="#" alt="image for homepage">
 
-      </ul>
-      <h3>My Acievments</h3>
-      <p>
-        I have always been captivated by technology from a very young age and have made
-        it my goal to comprehend its most elusive secrets.  This has led me to perhaps the
-        most complicated fields of the tech industry, cybersecurity.  This is a showcase 
-        for all the knowledge and skills I have developed for both myself and my career 
-        in cybersecurity.
+        <h3>My Acievments</h3>
+        <p>
+            I have always been captivated by technology from a very young age and have made
+            it my goal to comprehend its most elusive secrets.  This has led me to perhaps the
+            most complicated fields of the tech industry, cybersecurity.  This is a showcase 
+            for all the knowledge and skills I have developed for both myself and my career 
+            in cybersecurity.
 
-        <!--This is a page for my completed accomplishments, projects and things like certificates-->
-      </p>
-      <p>Images for the Page 2</p>
-      <img src="images/cyber_learn.jpg" alt="image for page2">
-      <img src="images/cyber6.jpg" alt="image for page2">
-      <img src="images/cyber (5).jpg" alt="image for page2">
+            <!--This is a page for my completed accomplishments, projects and things like certificates-->
+        </p>
+        <p>Images for the Page 2</p>
+        <img src="images/cyber_learn.jpg" alt="image for page2">
+        <img src="images/cyber6.jpg" alt="image for page2">
+        <img src="images/cyber (5).jpg" alt="image for page2">
 
-      </ul>
-      <h3>[Page 3]</h3>
-      <p>
-        <!--This page will be a introduction and place to get to know me better-->
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Welcome to my chronicling of my 
-        Cybersecurity journey, I hope you can see both the path I have taken to get
-        where I am, as well as my future aspirations.  From a young age I have been 
-        presented with problems that I needed to solve, I can remember wanting to 
-        play Nintendo 64 at my cousins house but his mother did not know how to set 
-        it up and he was not there.  I knew that if I wanted to play game then I 
-        would need to figure out the mysterious yellow, white and red cables and 
-        figure out how to plug them into the tv in the white colored plugs that looked 
-        the same shape but were not color-coded like on the game system.  This has since 
-        evolved into wanting to configure my own Raid storage for my computer with NVMe 
-        drives and things like accessing my Apple computer with my Linux system through 
-        command line to use Emacs.  Whether I have a need to do something out of my league 
-        to solve an issue I am having, like wanting to have my own website server or 
-        because I want to upgrade my computer to play the latest game, I am passionate 
-        about accomplishing my goals.  <br><br>
+        <h3>[Page 3]</h3>
+        <p>
+            <!--This page will be a introduction and place to get to know me better-->
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Welcome to my chronicling of my 
+            Cybersecurity journey, I hope you can see both the path I have taken to get
+            where I am, as well as my future aspirations.  From a young age I have been 
+            presented with problems that I needed to solve, I can remember wanting to 
+            play Nintendo 64 at my cousins house but his mother did not know how to set 
+            it up and he was not there.  I knew that if I wanted to play game then I 
+            would need to figure out the mysterious yellow, white and red cables and 
+            figure out how to plug them into the tv in the white colored plugs that looked 
+            the same shape but were not color-coded like on the game system.  This has since 
+            evolved into wanting to configure my own Raid storage for my computer with NVMe 
+            drives and things like accessing my Apple computer with my Linux system through 
+            command line to use Emacs.  Whether I have a need to do something out of my league 
+            to solve an issue I am having, like wanting to have my own website server or 
+            because I want to upgrade my computer to play the latest game, I am passionate 
+            about accomplishing my goals.  <br><br>
 
-	      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; One of my favorite things about technology 
-        is the never-ending evolution and requirement to learn about the latest products and 
-        ideas.  There is an abundance of different things to learn in each of the many niches 
-        that technology has to offer.  This makes it easy to feed my addiction of research 
-        and my drive to learn everything I can.  It has become harder to realize I have to 
-        be more selective of the tasks I choose and things I educate myself on simply because 
-        of the sheer growth of the world.  This has given me the insight to see which things 
-        correlate the most and focus on those.  Seeing how some things fade away as well as 
-        how they emerge enhances these insights even farther. <br><br>
+	          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; One of my favorite things about technology 
+            is the never-ending evolution and requirement to learn about the latest products and 
+            ideas.  There is an abundance of different things to learn in each of the many niches 
+            that technology has to offer.  This makes it easy to feed my addiction of research 
+            and my drive to learn everything I can.  It has become harder to realize I have to 
+            be more selective of the tasks I choose and things I educate myself on simply because 
+            of the sheer growth of the world.  This has given me the insight to see which things 
+            correlate the most and focus on those.  Seeing how some things fade away as well as 
+            how they emerge enhances these insights even farther. <br><br>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; My father owns a construction company and 
-        I have worked there from a young age seeing how things are put together and how to 
-        tackle large projects.  Working in the mountains comes with many challenges, like 
-        having minimal space to work or fit equipment and steep inclines and hard to reach 
-        areas.  I have learned to develop problems solving skills and spatial awareness 
-        fitting large equipment like a backhoe into a very small area and having to work with 
-        large amounts of dirt in very small spaces.  Keeping equipment maintained and seeing 
-        how managing materials and time wisely affects the profits of a company has given me 
-        respect for how a business can profit. <br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; My father owns a construction company and 
+            I have worked there from a young age seeing how things are put together and how to 
+            tackle large projects.  Working in the mountains comes with many challenges, like 
+            having minimal space to work or fit equipment and steep inclines and hard to reach 
+            areas.  I have learned to develop problems solving skills and spatial awareness 
+            fitting large equipment like a backhoe into a very small area and having to work with 
+            large amounts of dirt in very small spaces.  Keeping equipment maintained and seeing 
+            how managing materials and time wisely affects the profits of a company has given me 
+            respect for how a business can profit. <br><br>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Since my time in Anderson Construction, I 
-        have moved away from California to buy a house and raise a family while pursuing the 
-        career of my choosing, Cybersecurity.  I got a job at my local Walmart working in the 
-        entertainment department while I finish getting my Associate degree in software 
-        engineering.  I have since gained experience in customer service and satisfaction, as 
-        well as seeing the types of issues people have and learning the best ways to help them.  
-        My education has helped me in solving the unique problems they come to me with and 
-        giving them the most efficient advice that I can.  It is a challenge at times to have 
-        gone from managing my own projects, jobs, and sometimes a crew in construction to 
-        learning to be a part of a team in a large corporation.  I have had to learn 
-        how to work with different types of employees both good as well as ones who did 
-        not care as much as I did.  
-      </p>
-      <p>Images for the Page 3</p>
-        <img src="images/cyber (2).jpg" alt="image for page3">
-        <img src="images/cyber4.jpg" alt="image for page3">   
-        <img src="images/employee_of_quarter.jpg" alt="image for page3">
-        <img src="images/Intro_cyber_cert.png" alt="image for page3">
-        <img src="images/Jonathan_Anderson_PHP.png" alt="image for page3">
-
-
-      </ul>
-      <hr>
-      <h2>
-        Wireframes
-      </h2>
-      <p>
-        Create three wireframes for your site. One for each page and list them here</p>
-
-      <h3>Home</h3>
-      <p>         
-        [Any additional details about home that the wireframe does not make clear]
-      </p>
-      <img src="images/home_page.png" alt="home page wireframe">
-
-      <h3>[Page 2]</h3>
-      <p>         
-        [Any additional details about page 2 that the wireframe does not make clear]
-      </p>
-      <img src="images/sub_page_1.png" alt="page 2 wireframe">
-
-      <h3>[Page 3]</h3>
-      <p>         
-        [Any additional details about page 3 that the wireframe does not make clear]
-      </p>
-      <img src="images/sub_page_2.png" alt="page 3 wireframe">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Since my time in Anderson Construction, I 
+            have moved away from California to buy a house and raise a family while pursuing the 
+            career of my choosing, Cybersecurity.  I got a job at my local Walmart working in the 
+            entertainment department while I finish getting my Associate degree in software 
+            engineering.  I have since gained experience in customer service and satisfaction, as 
+            well as seeing the types of issues people have and learning the best ways to help them.  
+            My education has helped me in solving the unique problems they come to me with and 
+            giving them the most efficient advice that I can.  It is a challenge at times to have 
+            gone from managing my own projects, jobs, and sometimes a crew in construction to 
+            learning to be a part of a team in a large corporation.  I have had to learn 
+            how to work with different types of employees both good as well as ones who did 
+            not care as much as I did.  
+        </p>
     </main>
+
     <footer>
         <p>Educational Savant &copy; 2023 - Jonathan Anderson</p>
-        <p><a href="site-plan.html">Site Plan</a></p>
-        <script src="../script.js"></script>
+         <p><a href="../index.html">Home</a></p>
     </footer>
-  </body>
+
+    <script src="../script.js"></script>
+</body>

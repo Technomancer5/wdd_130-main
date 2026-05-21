@@ -3,7 +3,7 @@
 :root {
     --primary-color: #0008F1;
     --secondary-color: #1eabdb;
-    --accent1-color: #622eff;
+    --accent1-color: #0008F1;
     --accent2-color: #ff0000; 
     --extra-font: "Shadows Into Light";
     --paragraph-font: Play, Helvetica, sans-serif;
@@ -11,47 +11,121 @@
     --fancy-font: Papyrus;
   }
 
-header, main {
-    /* Since the nav bar buttons are 250px wide, I gave the content 
-       an extra cushion so it sits perfectly clear of the buttons */
-    margin-left: 100px; !important;
-    padding-right: 15px; /* Keeps the right side balanced */
+header {
+    margin-left: 100px;
+    padding-right: 15px;
+    position: relative; /* Acts as the anchor point for the absolute positioning */
+    padding-top: 40px;  /* Creates top clearance so the buttons don't overlap title */
 }
 
+main {
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative; /* Acts as the anchor point for the absolute positioning */
+}
+
+/* Global styles for all bodies (fonts, margins, etc.) */
 body {
     background-color: #F1FF2E;
     font-size: 22px;
+    font-family: Play, sans-serif;
     max-width: 1400px; /* Allows the site to shrink gracefully on smaller screens */
     margin: 0 auto;    /* Centers your entire website layout on the screen */
     padding: 0;
     overflow-x: hidden; /* Guards against anything throwing a horizontal scrollbar */
 }
-/* Global styles for all bodies (fonts, margins, etc.) */
-body {
-    margin: 0;
-    font-family: Play, sans-serif;
-}
 
 /* Unique backgrounds per page ID */
 #home-page {
-    background-color: #000588; /* Dark Blue */
+    background-color: #210074;
 }
-
 #achievements-page {
-    background-color: #1a1a1a; /* Dark Grey/Black for a sleek portfolio look */
+    background-color: #210074;
 }
-
 #site-plan-page {
-    background-color: #1eabdb; /* Light Blue to match your site-plan scheme */
+    background-color: #210074;
 }
 #about-me {
-    background-color: #210074; /* Light Blue to match your site-plan scheme */
+    background-color: #210074;
+}
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+    position: fixed; /* Position them relative to the browser window */
+    left: -190px; /* Position them outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+    padding: 20px 25px;
+    width: 250px; /* Set a specific width */
+    text-decoration: none; /* Remove underline */
+    font-size: 25px; /* Increase font size */
+    color: #F1FF2E; /* White text color */
+    border-radius: 0 8px 8px 0; /* Rounded corners on the top right and bottom right side */
+    box-sizing: border-box;   /* Ensures the padding doesn't break the layout width math */
+    display: flex;
+    align-items: center;       /* Vertically centers the text inside the button */
+    justify-content: flex-end; /* Keeps text aligned toward the edge you hover over */
+    z-index: 999;              /* The fix: an ultra-high number that forces it to the absolute top layer */
+    white-space: nowrap;       /* Prevents text from ever breaking into a second row */
+  }
+#mySidenav a:hover {
+    left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* nav elements below ?? */
+#index {
+    top: 20px;
+    background-color: #ff0000;
+}
+#achievements {
+    top: 100px;
+    background-color: #0008F1;
+} 
+#about {
+    top: 180px;
+    background-color: #1eabdb;
+}
+#site-plan {
+    top: 260px;
+    background-color:#210074;
+}
+#Elvish-Translator {
+  top: 340px;
+  background-color: #0008F1;
 }
 
 #title {
     display: flex;
     justify-content: center;
 }
+/* This container holds the text and handles the vertical stacking */
+.title-group {
+    display: flex;
+    flex-direction: column; /* Places h2 directly under h1 */
+    align-items: center;    /* Centers both text lines horizontally */
+    text-align: center;     /* Centers the text inside the elements */
+    gap: 5px;               /* Clean spacing between H1 and H2 */
+}
+.title-group h1, 
+.title-group h2 {
+    margin: 0;              /* Removes default browser margins */
+}
+
+#brand {
+    position: relative;     /* Anchors the logo's position inside this header area */
+    display: flex;
+    justify-content: center;/* Dead-centers the text group on the screen */
+    align-items: center;    /* Vertically centers everything */
+    min-height: 120px;      /* Gives the header plenty of vertical space */
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Optional: Clean up default margins on the h1 so it stays perfectly level */
+#brand h1,
+#brand h2 {
+    margin: 0;
+}
+
 nav {
     font-size: 1.5em;
     display: flex;
@@ -75,7 +149,14 @@ h1 {
     font-size: 2.5em;
     text-align: center;
     color: #0008F1;
-    padding: 25px;
+    padding: 10px;
+}
+h2 {
+    font-family: var(--fancy-font);
+    font-size: 1.5em;
+    text-align: center;
+    color: #1eabdb;
+    padding: 10px;
 }
 h4 {
     font-family: var(--paragraph-font);
@@ -87,13 +168,22 @@ h4 {
 #home-grid {
     display: grid;
     justify-items: center;
-    align-items: center;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 25px;
 }
+
 .logo {
     max-height: 125px;
     padding: 25px;
+}
+#logo_link:hover {
+    opacity: 0.8; /* Makes the image slightly fade when hovered, signaling it's a link */
+    cursor: pointer;
+}
+#logo_link {
+    position: absolute;     /* Pulls the logo out of the layout flow so it doesn't push the H1 */
+    left: 20px;             /* Pins it firmly to the left corner */
+    top: 50%;
+    transform: translateY(-50%); /* Keeps the logo perfectly vertically centered */
 }
 
 #mytext {
@@ -101,13 +191,18 @@ h4 {
     grid-column: 1/2;
 }
 .resume-img {
-    width: 750px;
+    height: 100%;            /* Tells the image to scale all the way from top to bottom */
+    width: 100%;
+    object-fit: contain;     /* The fix: scales the image down to fit completely with zero cropping */
+    display: block;          /* Cleans up any weird default browser spacing beneath the image */
+    margin: 0 auto;
     grid-column: 2/4;
     grid-row: 1/4;
 }
 .side {
     max-width: 100%;
-    width: 250px;
+    width: 400px;
+
 }
 footer a:hover {
     color: #1eabdb;
@@ -139,7 +234,6 @@ footer {
     margin: 30px;
     box-sizing: border-box; /* Ensures padding doesn't add extra width to the grid */
 }
-
 #home-grid1 h5 {
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
@@ -213,53 +307,13 @@ footer {
     margin-left: 50px;
 }
 
-/* Style the links inside the sidenav */
-#mySidenav a {
-    position: fixed; /* Position them relative to the browser window */
-    left: -190px; /* Position them outside of the screen */
-    transition: 0.3s; /* Add transition on hover */
-    padding: 20px 25px;
-    width: 250px; /* Set a specific width */
-    text-decoration: none; /* Remove underline */
-    font-size: 25px; /* Increase font size */
-    color: #F1FF2E; /* White text color */
-    border-radius: 0 8px 8px 0; /* Rounded corners on the top right and bottom right side */
-    box-sizing: border-box;   /* Ensures the padding doesn't break the layout width math */
-    display: flex;
-    align-items: center;      /* Vertically centers the text inside the button */
-    justify-content: flex-end; /* Keeps text aligned toward the edge you hover over */
-    
-    /* white-space: nowrap; *//* <<< Prevents text from ever breaking into a second row */
-  }
-
-  #mySidenav a:hover {
-    left: 0; /* On mouse-over, make the elements appear as they should */
-  }
-
-  #index {
-    top: 20px;
-    background-color: #ff0000;
-  }
-  #achievements {
-    top: 100px;
-    background-color: #0008F1;
-  } 
-  #about {
-    top: 215px;
-    background-color: #1eabdb;
-  }
-  #site-plan {
-    top: 295px;
-    background-color:#1eabdb
-  }
-
-#Elvish-Translator {
-  top: 375px;
-  background-color: #0008F1;
-}
-
   /* Container positioning */
 .language-picker {
+    position: absolute;
+    top: 10px;          /* Distance from the very top edge of the header */
+    right: 20px;        /* Distance from the right edge of the screen */
+    display: flex;
+    gap: 10px;
     padding: 20px;
     text-align: right; /* Places them in the top right corner */
 }
@@ -269,10 +323,12 @@ footer {
     background-color: #222; /* Dark background */
     color: #0f0;            /* Neon green text */
     border: 2px solid #0f0; /* Neon green border */
-    padding: 10px 20px;
+    border-radius: 4px;
+    padding: 6px 12px;
     margin-left: 10px;
     cursor: pointer;        /* Changes mouse to a hand on hover */
     font-family: 'Courier New', Courier, monospace; /* Terminal look */
+    font-weight: bold;
     transition: 0.3s;       /* Smooth color change */
 }
 

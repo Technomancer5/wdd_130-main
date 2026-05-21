@@ -5,20 +5,13 @@
 
    const translations = {
     english: {
-        welcome: "Welcome to my Website!!",
-        navAbout: "About Me Page",
+        welcome: "Welcome to my website!!",
+        navAbout: "About Me",
         navPortfolio: "Portfolio",
         navPlan: "Personal Siteplan",
         navHome: "Home"
     },
-    /*
-    klingon: {
-        welcome: "tLHIngan maH!",
-        navAbout: "gHboH (History)",               // Klingon for history/about
-        navPortfolio: "patmey (Systems/Projects)", // Klingon for systems
-        navPlan: "He (The Course/Plan)"            // Klingon for route/navigational plan
-    },
-    */
+    
     elvish: {
         welcome: "Welcome to my website!!",
         navAbout: "Nanyë (About Me)",
