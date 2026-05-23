@@ -19,7 +19,7 @@ header {
 }
 
 main {
-    margin-left: 10px;
+    margin-left: 30px;
     margin-right: 10px;
     position: relative; /* Acts as the anchor point for the absolute positioning */
 }
@@ -42,7 +42,7 @@ body {
 #achievements-page {
     background-color: #210074;
 }
-#site-plan-page {
+#my-journey {
     background-color: #210074;
 }
 #about-me {
@@ -52,13 +52,12 @@ body {
 /* Style the links inside the sidenav */
 #mySidenav a {
     position: fixed; /* Position them relative to the browser window */
-    left: -190px; /* Position them outside of the screen */
+    left: -215px; /* Position them outside of the screen */
     transition: 0.3s; /* Add transition on hover */
     padding: 20px 25px;
-    width: 250px; /* Set a specific width */
+    width: 235px; /* Set a specific width */
     text-decoration: none; /* Remove underline */
     font-size: 25px; /* Increase font size */
-    color: #F1FF2E; /* White text color */
     border-radius: 0 8px 8px 0; /* Rounded corners on the top right and bottom right side */
     box-sizing: border-box;   /* Ensures the padding doesn't break the layout width math */
     display: flex;
@@ -70,27 +69,30 @@ body {
 #mySidenav a:hover {
     left: 0; /* On mouse-over, make the elements appear as they should */
 }
-
-/* nav elements below ?? */
-#index {
+#mySidenav #index {
     top: 20px;
-    background-color: #ff0000;
+    background-color: #1eabdb;
+    color: #0008F1;
 }
-#achievements {
+#mySidenav #achievements {
     top: 100px;
     background-color: #0008F1;
+    color: #1eabdb;
 } 
-#about {
+#mySidenav #about {
     top: 180px;
     background-color: #1eabdb;
+    color: #0008F1;
 }
-#site-plan {
+#mySidenav #my-journey {
     top: 260px;
-    background-color:#210074;
+    background-color: #0008F1;
+    color: #1eabdb;
 }
-#Elvish-Translator {
-  top: 340px;
-  background-color: #0008F1;
+#mySidenav #Elvish-Translator {
+    top: 340px;
+    background-color: #1eabdb;
+    color: #0008F1;
 }
 
 #title {
@@ -134,14 +136,13 @@ nav {
 nav a {
     font-family: var(--heading-font);
     text-align: center;
-    color: #ff0000;
     text-decoration: none;
     padding: 25px;
     margin-top: 30px;
 }
 nav a:hover {
-    background-color: #1eabdb;
-    color: #0008F1;
+    /* background-color: #1eabdb; */
+    /* color: #0008F1; */
     padding: 15px;
 }
 h1 {
@@ -202,14 +203,21 @@ h4 {
 .side {
     max-width: 100%;
     width: 400px;
-
 }
+
+hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, #1eabdb, #F1FF2E, transparent); /* Fades from your blue to accent yellow, then disappears! */
+    margin: 30px 0;
+}
+
 footer a:hover {
     color: #1eabdb;
 }
 footer p, footer a {
     font-family: var(--heading-font);
-    color: #ff0000;
+    color: #1eabdb;
     font-size: 1em;
     padding: 30px;
     margin-left: 15px;
@@ -228,11 +236,12 @@ footer {
 /* this is my child page 1 achievements css*/
 #home-grid1 {
     display: grid;
-    /* This forces column 1 to fit the text, and lets columns 2 & 3 share the rest perfectly */
-    grid-template-columns: minmax(300px, 1fr) 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
+    gap: 30px; /* Clean, uniform spacing between rows and columns */
     padding: 25px;
     margin: 30px;
     box-sizing: border-box; /* Ensures padding doesn't add extra width to the grid */
+    align-items: start;     /* Aligns items cleanly to the top of their grid rows */
 }
 #home-grid1 h5 {
     grid-column: 1 / span 1;
