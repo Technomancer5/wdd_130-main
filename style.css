@@ -1,5 +1,13 @@
 @import url('https://fonts.cdnfonts.com/css/tengwar-annatar');
 
+/* Instead of typing out your exact colors and fonts all over your stylesheet,
+you define them here once as variables. Then you can reference them anywhere
+else in your CSS. */
+/* Example:
+h1 {
+    color: var(--accent2-color);
+    font-family: var(--heading-font);
+} */
 :root {
     --primary-color: #0008F1;
     --secondary-color: #1eabdb;
@@ -11,31 +19,7 @@
     --fancy-font: Papyrus;
   }
 
-header {
-    margin-left: 100px;
-    padding-right: 15px;
-    position: relative; /* Acts as the anchor point for the absolute positioning */
-    padding-top: 40px;  /* Creates top clearance so the buttons don't overlap title */
-}
-
-main {
-    margin-left: 30px;
-    margin-right: 10px;
-    position: relative; /* Acts as the anchor point for the absolute positioning */
-}
-
-/* Global styles for all bodies (fonts, margins, etc.) */
-body {
-    background-color: #F1FF2E;
-    font-size: 22px;
-    font-family: Play, sans-serif;
-    max-width: 1400px; /* Allows the site to shrink gracefully on smaller screens */
-    margin: 0 auto;    /* Centers your entire website layout on the screen */
-    padding: 0;
-    overflow-x: hidden; /* Guards against anything throwing a horizontal scrollbar */
-}
-
-/* Unique backgrounds per page ID */
+  /* Unique backgrounds per page ID */
 #home-page {
     background-color: #210074;
 }
@@ -47,6 +31,98 @@ body {
 }
 #about-me {
     background-color: #210074;
+}
+
+  /* Global styles for all bodies (fonts, margins, etc.) */
+body {
+    background-color: #F1FF2E;
+    font-size: 22px;
+    font-family: Play, sans-serif;
+    max-width: 100%; /* Allows the site to shrink gracefully on smaller screens */
+    overflow-x: hidden; /* Guards against anything throwing a horizontal scrollbar */
+}
+
+#brand {
+    position: relative;     /* Anchors the logo's position inside this header area */
+    display: flex;
+    justify-content: center;/* Dead-centers the text group on the screen */
+    align-items: center;    /* Vertically centers everything */
+    min-height: 120px;      /* Gives the header plenty of vertical space */
+    padding: 20px;
+    margin: 0 0 30px 0; /* Order: Top (0), Right (0), Bottom (30px), Left (0) */
+}
+
+.elvish-text {
+    font-family: 'Tengwar Annatar', sans-serif;
+    font-size: 2.2em; /* Script fonts tend to look small; boosting the size helps clarity */
+    line-height: 1.6;
+}
+  /* Container positioning */
+.language-picker {
+    position: absolute;
+    top: 10px;          /* Distance from the very top edge of the header */
+    right: 20px;        /* Distance from the right edge of the screen */
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    text-align: right; /* Places them in the top right corner */
+}
+/* Technomancer Button Style */
+.lang-button {
+    background-color: #222; /* Dark background */
+    color: #0f0;            /* Neon green text */
+    border: 2px solid #0f0; /* Neon green border */
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin-left: 10px;
+    cursor: pointer;        /* Changes mouse to a hand on hover */
+    font-family: 'Courier New', Courier, monospace; /* Terminal look */
+    font-weight: bold;
+    transition: 0.3s;       /* Smooth color change */
+}
+/* Hover effect */
+.lang-button:hover {
+    background-color: #0f0;
+    color: #000;            /* Inverts colors on hover */
+}
+/* The box that follows your mouse */
+#translation-overlay {
+    position: absolute; /* Allows it to move freely on the page */
+    display: none;      /* Keeps it hidden until we need it */
+    background: rgba(0, 0, 0, 0.85); /* Semi-transparent dark background */
+    color: #0f0;        /* Neon green text */
+    border: 1px solid #0f0; /* Neon green border */
+    padding: 8px 12px;
+    border-radius: 4px;
+    pointer-events: none; /* Crucial: mouse 'ignores' the box so it doesn't flicker */
+    z-index: 9999;      /* Ensures it stays on top of everything else */
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+}
+
+.logo {
+    max-height: 125px;
+    padding: 25px;
+}
+#logo_link:hover {
+    opacity: 0.8; /* Makes the image slightly fade when hovered, signaling it's a link */
+    cursor: pointer;
+}
+#logo_link {
+    position: absolute;     /* Pulls the logo out of the layout flow so it doesn't push the H1 */
+    left: 20px;             /* Pins it firmly to the left corner */
+    top: 50%;
+    transform: translateY(-50%); /* Keeps the logo perfectly vertically centered */
+}
+
+/* This container holds the text and handles the vertical stacking */
+.title-group {
+    display: flex;
+    flex-direction: column; /* Places h2 directly under h1 */
+    align-items: center;    /* Centers both text lines horizontally */
+    text-align: center;     /* Centers the text inside the elements */
+    gap: 5px;               /* Clean spacing between H1 and H2 */
+    margin: 0;
 }
 
 /* Style the links inside the sidenav */
@@ -94,40 +170,6 @@ body {
     background-color: #1eabdb;
     color: #0008F1;
 }
-
-#title {
-    display: flex;
-    justify-content: center;
-}
-/* This container holds the text and handles the vertical stacking */
-.title-group {
-    display: flex;
-    flex-direction: column; /* Places h2 directly under h1 */
-    align-items: center;    /* Centers both text lines horizontally */
-    text-align: center;     /* Centers the text inside the elements */
-    gap: 5px;               /* Clean spacing between H1 and H2 */
-}
-.title-group h1, 
-.title-group h2 {
-    margin: 0;              /* Removes default browser margins */
-}
-
-#brand {
-    position: relative;     /* Anchors the logo's position inside this header area */
-    display: flex;
-    justify-content: center;/* Dead-centers the text group on the screen */
-    align-items: center;    /* Vertically centers everything */
-    min-height: 120px;      /* Gives the header plenty of vertical space */
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
-/* Optional: Clean up default margins on the h1 so it stays perfectly level */
-#brand h1,
-#brand h2 {
-    margin: 0;
-}
-
 nav {
     font-size: 1.5em;
     display: flex;
@@ -145,71 +187,12 @@ nav a:hover {
     /* color: #0008F1; */
     padding: 15px;
 }
+
 h1 {
     font-family: var(--fancy-font);
     font-size: 2.5em;
     text-align: center;
     color: #0008F1;
-    padding: 10px;
-}
-h2 {
-    font-family: var(--fancy-font);
-    font-size: 1.5em;
-    text-align: center;
-    color: #1eabdb;
-    padding: 10px;
-}
-h4 {
-    font-family: var(--paragraph-font);
-    font-size: 2.5em;
-    text-align: center;
-    color: #0008F1;
-    padding: 25px;
-}
-#home-grid {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.logo {
-    max-height: 125px;
-    padding: 25px;
-}
-#logo_link:hover {
-    opacity: 0.8; /* Makes the image slightly fade when hovered, signaling it's a link */
-    cursor: pointer;
-}
-#logo_link {
-    position: absolute;     /* Pulls the logo out of the layout flow so it doesn't push the H1 */
-    left: 20px;             /* Pins it firmly to the left corner */
-    top: 50%;
-    transform: translateY(-50%); /* Keeps the logo perfectly vertically centered */
-}
-
-#mytext {
-    font-size: 1.5em;
-    grid-column: 1/2;
-}
-.resume-img {
-    height: 100%;            /* Tells the image to scale all the way from top to bottom */
-    width: 100%;
-    object-fit: contain;     /* The fix: scales the image down to fit completely with zero cropping */
-    display: block;          /* Cleans up any weird default browser spacing beneath the image */
-    margin: 0 auto;
-    grid-column: 2/4;
-    grid-row: 1/4;
-}
-.side {
-    max-width: 100%;
-    width: 400px;
-}
-
-hr {
-    border: 0;
-    height: 2px;
-    background: linear-gradient(to right, #1eabdb, #F1FF2E, transparent); /* Fades from your blue to accent yellow, then disappears! */
-    margin: 30px 0;
 }
 
 footer a:hover {
@@ -227,143 +210,118 @@ footer {
     align-items: center;
     margin: 50px;
 }
-.social {
-    margin-left: 50px;
-    margin-right: 50px;
-    padding: 20px;
+
+hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, #1eabdb, #F1FF2E, transparent); /* Fades from your blue to accent yellow, then disappears! */
+    margin: 30px 0;
 }
 
-/* this is my child page 1 achievements css*/
+/* Home page specific CSS */
+h2 {
+    font-family: var(--fancy-font);
+    font-size: 1.5em;
+    text-align: center;
+    color: #1eabdb;
+}
+h4 {
+    font-family: var(--paragraph-font);
+    font-size: 1.5em;
+    color: #0008F1;
+    grid-column: 2 / span 1;
+}
+#home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.resume-img {
+    height: 100%;        /* Tells the image to scale all the way from top to bottom */
+    width: 100%;
+    object-fit: contain; /* The fix: scales the image down to fit completely with zero cropping */
+    display: block;      /* Cleans up any weird default browser spacing beneath the image */
+    grid-column: 2/4;
+    grid-row: 1/4 / span 2;
+}
+.top {
+    max-width: 100%;
+    width: 90%;
+    grid-column: 1 / span 1;
+}
+.bottom {
+    max-width: 100%;
+    width: 90%;
+    grid-column: 3 / span 1;
+}
+
+/* About Me page specific CSS. */
+#home-grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; 
+}
+h3 {
+    font-family: var(--fancy-font);
+    font-size: 1.0em;
+    color: #1eabdb;
+    width: 90%;
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 3;
+}
+.cyberdragons2-img {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    width: 90%;
+}
+.cyberpower-img {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    width: 90%;
+}
+.cyber5-img {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+    width: 90%;
+}
+
+/* Achievements page specific CSS. */
 #home-grid1 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px; /* Clean, uniform spacing between rows and columns */
-    padding: 25px;
-    margin: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px; /* Clean, uniform spacing between rows and columns */
     box-sizing: border-box; /* Ensures padding doesn't add extra width to the grid */
     align-items: start;     /* Aligns items cleanly to the top of their grid rows */
 }
 #home-grid1 h5 {
-    grid-column: 1 / span 1;
+    grid-column: 1 / span 2;
     grid-row: 1 / span 1;
+    font-family: var(--fancy-font);
+    font-size: 1.0em;
+    color: #1eabdb;
     max-width: 500px;
-    margin-left: 40px;
-}
-
-.employeeofquarter-img {
-    grid-column: 2 / span 2;
-    grid-row: 1 / span 2;
-    justify-self: center; /* Centering it inside columns 2 & 3 prevents right-side spill */
-    width: 100%;          /* Allows the image to be fully responsive */
-    max-width: 650px;     /* Keeps it from blowing up past your preferred size */
-    margin-bottom: 20px;  /* Kept your bottom margin intact */
 }
 .cyberguy-img {
-    grid-column: 1 / span 1;
-    grid-row: 2 / span 1;
-    justify-self: start;
-    max-width: 500px;
-    max-height: 333px;
-    margin-left: 175px;
-}
-.cybersecurity-img {
-    grid-column: 1 / span 2;
-    grid-row: 3 / span 1;
-    justify-self: center;
-    max-width: 600px;
+    max-height: 10%;
+    max-width: 75%;
 }
 .PCPRO-img {
-    grid-column: 3 / span 1;
-    grid-row: 3 / span 1;
-    margin-right: 40px;
-    max-width: 600px;  
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    max-width: 600px;
+}
+.cybersecurity-img {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    max-width: 500px;
 }
 .introphp-img {
     grid-column: 1 / span 1;
-    grid-row: 4 / span 1;
-    margin-left: 40px;
-    max-width: 700px;
-}
-
-/* child page 2 css code */
-#home-grid2 {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr; 
-}
-#home-grid2 h3 {
-    grid-column: 2 / span 2;
-    grid-row: 1 / span 3;
-    font-size: 20px;
-    width: 950px;
-    margin-right: 50px;
-}
-.cyber5-img {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1;
-    margin-left: 50px;
-}
-.cyberdragons2-img {
-    grid-column: 1 / span 1;
-    grid-row: 2 / span 1;
-    margin-left: 50px;
-}
-.cyberpower-img {
-    grid-column: 1 / span 1;
     grid-row: 3 / span 1;
-    margin-left: 50px;
 }
-
-  /* Container positioning */
-.language-picker {
-    position: absolute;
-    top: 10px;          /* Distance from the very top edge of the header */
-    right: 20px;        /* Distance from the right edge of the screen */
-    display: flex;
-    gap: 10px;
-    padding: 20px;
-    text-align: right; /* Places them in the top right corner */
-}
-
-/* Technomancer Button Style */
-.lang-button {
-    background-color: #222; /* Dark background */
-    color: #0f0;            /* Neon green text */
-    border: 2px solid #0f0; /* Neon green border */
-    border-radius: 4px;
-    padding: 6px 12px;
-    margin-left: 10px;
-    cursor: pointer;        /* Changes mouse to a hand on hover */
-    font-family: 'Courier New', Courier, monospace; /* Terminal look */
-    font-weight: bold;
-    transition: 0.3s;       /* Smooth color change */
-}
-
-/* Hover effect */
-.lang-button:hover {
-    background-color: #0f0;
-    color: #000;            /* Inverts colors on hover */
-}
-
-/* The box that follows your mouse */
-#translation-overlay {
-    position: absolute; /* Allows it to move freely on the page */
-    display: none;      /* Keeps it hidden until we need it */
-    background: rgba(0, 0, 0, 0.85); /* Semi-transparent dark background */
-    color: #0f0;        /* Neon green text */
-    border: 1px solid #0f0; /* Neon green border */
-    padding: 8px 12px;
-    border-radius: 4px;
-    pointer-events: none; /* Crucial: mouse 'ignores' the box so it doesn't flicker */
-    z-index: 9999;      /* Ensures it stays on top of everything else */
-    font-size: 14px;
-    font-family: 'Courier New', monospace;
-}
-
-.elvish-text {
-    font-family: 'Tengwar Annatar', sans-serif;
-    font-size: 2.2em; /* Script fonts tend to look small; boosting the size helps clarity */
-    line-height: 1.6;
+.employeeofquarter-img {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+    max-width: 500px;     /* Keeps it from blowing up past your preferred size */
 }
